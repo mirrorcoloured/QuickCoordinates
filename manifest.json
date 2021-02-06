@@ -1,0 +1,30 @@
+{
+    "name": "QuickCoordinates",
+    "description": "Grab coordinates by clicking on an interactive map. Uses Google Maps API.",
+    "version": "1.0.0",
+    "author": "Sky Chrastina",
+    "icons": {
+        "16": "icons/icon_16.png",
+        "32": "icons/icon_32.png",
+        "64": "icons/icon_64.png",
+        "128": "icons/icon_128.png"
+    },
+    "permissions": [
+        "storage",
+        "geolocation"
+    ],
+    "browser_action": {
+        "default_popup": "quickcoordinates.html",
+        "default_icon": "icons/icon_128.png",
+        "default_title": "QuickCoordinates"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "options_page": "options.html",
+    "content_security_policy": "script-src 'self' https://maps.googleapis.com; object-src 'self'",
+    "manifest_version": 2
+}

@@ -1,0 +1,26 @@
+#inpfirstkey {
+    width: 350px;
+}
+
+#keymsg {
+    color: red;
+    font-weight: bold;
+}
+
+#pac-input {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px
+}
+
+#map {
+    width: 600px;
+    height: 400px;
+}
+
+#coords {
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
