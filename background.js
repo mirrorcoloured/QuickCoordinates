@@ -9,9 +9,10 @@ let params = {
 }
 
 // Load parameters from storage
+// chrome.storage.sync.get(console.log)
 for (let key of Object.keys(params)) {
 	const fullKey = `${storageKeyPrefix}-${key}`;
-	chrome.storage.local.get(fullKey, function (result) {
+	chrome.storage.sync.get(fullKey, function (result) {
 		console.log("Checking for parameter", key);
 		if (result[fullKey]) {
 			params[key] = result[fullKey];
