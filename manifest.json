@@ -1,7 +1,7 @@
 {
     "name": "QuickCoordinates",
     "description": "Grab coordinates by clicking on an interactive map. Uses Google Maps API.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Sky Chrastina",
     "icons": {
         "16": "icons/icon_16.png",
