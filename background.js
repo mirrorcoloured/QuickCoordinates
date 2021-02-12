@@ -1,5 +1,3 @@
-const storageKeyPrefix = "QuickCoordinates";
-
 // Default parameters
 let params = {
 	lastCenter: null,
@@ -8,19 +6,18 @@ let params = {
 	APIKey: "",
 }
 
-// Load parameters from storage
+// Load parameters from storage asynchronously
 // chrome.storage.sync.get(console.log)
-for (let key of Object.keys(params)) {
-	const fullKey = `${storageKeyPrefix}-${key}`;
-	chrome.storage.sync.get(fullKey, function (result) {
+chrome.storage.sync.get(function (response) {
+	console.log("Got storage:", response);
+	for (let key of Object.keys(params)) {
 		console.log("Checking for parameter", key);
-		if (result[fullKey]) {
-			params[key] = result[fullKey];
+		if (response[key]) {
+			params[key] = response[key];
 			console.log("Set parameter", key, "to", params[key]);
 		}
-	})
-}
-console.log("Loaded parameters", params);
+	}
+})
 
 // Respond to messages from frontend
 chrome.extension.onMessage.addListener(
