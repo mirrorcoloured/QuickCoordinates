@@ -13,7 +13,7 @@ let params = {};
 
 // Wait for first-time api key entry
 inpfirstkey.addEventListener("input", function (event) {
-    if (inpfirstkey.value.length == 39) {
+    if (isValidKey(inpfirstkey.value)) {
         params.APIKey = inpfirstkey.value;
         chrome.extension.sendMessage({
             cmd: "set_APIKey",
@@ -27,11 +27,22 @@ inpfirstkey.addEventListener("input", function (event) {
     }
 })
 
+function isValidKey(key) {
+    if (key.length == 39) {
+        return true;
+    }
+    return false;
+}
+
+function gm_authFailure() {
+    console.log("WOMP API key failure");
+}
+
 // Pull data from storage
 window.onload = function () {
     chrome.extension.sendMessage({ cmd: "getparams", }, function (response) {
         params = response;
-        if (params.APIKey.length == 39) {
+        if (isValidKey(params.APIKey)) {
             setup();
         } else {
             inpfirstkey.focus();

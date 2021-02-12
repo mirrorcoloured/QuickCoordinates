@@ -10,7 +10,7 @@ window.onload = function () {
 
 // Listen for changes
 input_apikey.addEventListener("input", function (e) {
-    if (input_apikey.value.length == 39) {
+    if (isValidKey(input_apikey.value)) {
         output_keymsg.innerHTML = "";
         chrome.extension.sendMessage({
             cmd: "set_APIKey",
@@ -30,3 +30,10 @@ input_apikey.addEventListener("input", function (e) {
         }
     }
 })
+
+function isValidKey(key) {
+    if (key.length == 39) {
+        return true;
+    }
+    return false;
+}
