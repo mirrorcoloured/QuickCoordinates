@@ -3,11 +3,11 @@ let params = {
 	lastCenter: null,
 	lastMarker: null,
 	lastZoom: 8,
-	APIKey: "",
 }
 
 // Load parameters from storage asynchronously
 // chrome.storage.sync.get(console.log)
+// chrome.storage.sync.clear()
 chrome.storage.sync.get(function (response) {
 	console.log("Got storage:", response);
 	for (let key of Object.keys(params)) {

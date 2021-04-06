@@ -1,7 +1,7 @@
 {
     "name": "QuickCoordinates",
-    "description": "Grab coordinates by clicking on an interactive map. Uses Google Maps API.",
-    "version": "1.0.2",
+    "description": "Grab coordinates by clicking on an interactive map. Uses Mapbox API.",
+    "version": "1.1.0",
     "author": "Sky Chrastina",
     "icons": {
         "16": "icons/icon_16.png",
@@ -24,7 +24,5 @@
         ],
         "persistent": false
     },
-    "options_page": "options.html",
-    "content_security_policy": "script-src 'self' https://maps.googleapis.com; object-src 'self'",
     "manifest_version": 2
 }

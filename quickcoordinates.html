@@ -2,22 +2,17 @@
 
 <head>
     <link rel="stylesheet" href="quickcoordinates.css">
+
+    <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' /> -->
+    <script src='./mapbox-gl.js'></script>
+    <link href='./mapbox-gl.css' rel='stylesheet' />
+
 </head>
 
 <body>
-    <div id="firstkey">
-        <span>Please enter a valid Google Maps API Key:</span>
-        <input type="text" id="inpfirstkey" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"></input>
-        <span id="keymsg"></span>
-        <p><a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">How do I
-                get an API Key?</a></p>
-        <p>The key needs access to the <a
-                href="https://developers.google.com/maps/documentation/javascript/overview">Maps JavaScript API</a>. To
-            use the Places search, the key also needs access
-            to <a href="https://developers.google.com/places/web-service/overview">Places API</a></p>
-        <p>Your API key can be updated in the extension options (right-click on icon, click <a href="options.html"
-                target="_blank">Options</a>)</p>
-    </div>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <input id="coords" type="text" placeholder="click map to get coordinates"></input>
 
     <script src="quickcoordinates.js"></script>
 </body>
